@@ -1,0 +1,12 @@
+---
+- name: Test AWX Connection
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Ping target
+      ansible.builtin.ping:
+
+    - name: Display hostname
+      ansible.builtin.debug:
+        msg: "Successfully connected to {{ inventory_hostname }}"
